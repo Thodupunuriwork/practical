@@ -1,0 +1,64 @@
+https://servicenow.gsk.com/home?id=kb_article&sysparm_article=KB0013565&sys_kb_id=4fb9a4551bbea0d0436f848ae54bcb12&spa=1
+
+dev,prod and test (normal):
+--------------------------
+Team : Bots,
+Domain : Cross ,
+Reason : As part of pipelines team we need access to dev environment for developing/testing pipelines.
+
+Team : Bots,
+Domain : Cross ,
+Reason : As part of pipelines team we need access to prod environment for deploying and monitoring pipelines.
+
+------------------------------------------
+
+
+DEV, PROD & TEST (Super): (90 days)
+----------------------------------
+Team : Bots,
+
+Domain : Cross ,
+
+Reason : As part of Unstructured Automation Pipeline we have to stream data to HPC for annotation of the data ,Inorder to stream data to HPC, we have to switch to dev_rdip_cross functional account
+
+TEST
+
+Team : Bots,
+
+Domain : Cross ,
+
+Reason : As part of Unstructured Automation Pipeline we have to stream data to HPC for annotation of the data ,Inorder to stream data to HPC, we have to switch to tst_rdip_cross functional account
+
+PROD
+
+Team : Bots,
+
+Domain : Cross ,
+
+Reason : As part of Unstructured Automation Pipeline we have to stream data to HPC for annotation of the data ,Inorder to stream data to HPC, we have to switch to prd_rdip_cross functional account
+------------------------------------------------
+
+github:
+------
+
+As part of pipelines team I need access to GitHub enterprise to maintain/develop pipeline specific repositories which are used in pipelines.
+
+prod (super) request -- 10 days
+
+confluence & jira: 
+-------------------
+Team : Bots,
+Domain : Cross ,
+Reason : As part of pipelines team we need access to confluence for accessing airflow, strimzi kafka, we need access to jira for updating and creating daily tasks.
+-----------------------------------------------------------
+
+platform access:
+
+Team : Bots,
+Domain : Cross ,
+Reason : As part of pipelines team we need access to  platform for developing/testing/monitoring data pipelines.
+
+Access needed: tfs, rancher, airflow, sharepoint
+
+
+https://sm-automation.corpnet1.com/AccessManagement_2021.07.06/Form.aspx?&&s=oHR6IpA4N0GaNsVRd2fMtw

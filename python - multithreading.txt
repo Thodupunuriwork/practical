@@ -1,0 +1,112 @@
+Python Multithreading :
+declaring a class as "Thread" behaves as Thread --> which runs on a different core with different thread rather than the main thread
+As there are 2 classes declared as therad--> it creates 2 threads called t1,t2 and an main thread.
+When the run() of t1 object and run() of t2 object is called the functions are executed on a single thread that is main thread.
+When the object t1 is called using t1.start() rather than t1.run() --> a new thread is created and the method starts it executing.
+similarly t2 thread will be created and executed when t2.start() is called. (to run parallely with a new thread we will use start() method, the run() method of Hello and hi class will be called atomatically.
+
+
+from time import sleep
+from threading import * #(Thread class)
+
+class Hello(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hello")
+            sleep(1)
+
+
+class Hi(Thread):
+    def run(self):
+        for i in range(5):
+            print("Hi")
+            sleep(1)
+
+
+t1 = Hello()
+t2 = Hi()
+
+t1.start()
+sleep(0.2)
+t2.start()
+
+t1.join()
+t2.join()
+
+print("Bye")
+
+-----------------------------
+Implementing Multithreading in java:
+
+class "Thread" is similar to "runnable" interface ( Thread class has many methods with run() but, runnable interface has only run() method)
+default we will have the main thread, 
+when we extend a class with Thread or implemets a class with runnable interface other threads are created.
+
+1) Extending a Thread class --> many methods along with run() and start() method.
+2) Implemententing the Runnable interface --> has only one method --> run() ( no start() --> to implement start() we again create an obj for "Thread"  and pass the obj's of created class which implements runnable)
+3) using Callable it evaluates and does not return anything ( throws an exception when there is an exception)
+
+--------------------------------Using Thread class ----------------------------------
+class MultithreadingDemo extends Thread {
+    public void run()
+    {
+        try {
+            // Displaying the thread that is running
+            System.out.println(
+                "Thread " + Thread.currentThread().getId()
+                + " is running");
+        }
+        catch (Exception e) {
+            // Throwing an exception
+            System.out.println("Exception is caught");
+        }
+    }
+}
+ 
+// Main Class
+public class Multithread {
+    public static void main(String[] args)
+    {
+        int n = 8; // Number of threads
+        for (int i = 0; i < n; i++) {
+            MultithreadingDemo object= new MultithreadingDemo();
+            object.start();
+        }
+    }
+}
+
+-------------------Using Runnable Interface-------------------------
+
+class MultithreadingDemo implements Runnable {
+    public void run()
+    {
+        try {
+            // Displaying the thread that is running
+            System.out.println(
+                "Thread " + Thread.currentThread().getId()
+                + " is running");
+        }
+        catch (Exception e) {
+            // Throwing an exception
+            System.out.println("Exception is caught");
+        }
+    }
+}
+ 
+// Main Class
+class Multithread {
+    public static void main(String[] args)
+    {
+        int n = 8; // Number of threads
+        for (int i = 0; i < n; i++) {
+            Thread object= new Thread(new MultithreadingDemo()); // pass the object of the MultithreadingDemo class.
+            object.start();
+        }
+    }
+}
+every time when we extend a class with Thread it becomes "Thread" and not an class. 
+eg: class hi extends Thread ( class hi becomes / behaves as thread and the methods of hi class are automatically called using start() method to execute parallely wrt other methods of classes and the methods must be named as "run" (Thread always calls run() method )
+run() is an internal method of thread.
+sleep used to pause the execution for some sec.
+scheduler takes it random order to execute threads.
+

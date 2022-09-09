@@ -1,0 +1,20 @@
+rtservers
+
+github
+
+xpath
+
+java
+
+maven
+
+dependency confluex
+
+migration of  
+
+branching strategy
+runnable , callable  multithreading
+As part of pipelines team I need access to GitHub enterprise to maintain/develop pipeline specific repositories which are used in pipelines.
+
+
+https://servicenow.gsk.com/home?id=kb_article&sysparm_article=KB0013565&sys_kb_id=4fb9a4551bbea0d0436f848ae54bcb12&spa=1

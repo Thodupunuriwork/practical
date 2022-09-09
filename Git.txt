@@ -1,0 +1,97 @@
+git & github --> https://www.youtube.com/watch?v=apGV9Kg7ics
+
+git helps to store all the history of files or folders and help in getting the details of changes made in those files ( details like who chnaged, at what time and where ) so all these canm be known using git.
+Github --> online platform that allows us to host the repos in online.
+repo --> folder that saves all the changes / details of files or folders in the github.
+
+maintaing history of project.
+all the histories or chnages done on fuiles or folders are stored in an git repo--> .git (hidden folders)
+
+To initialize an empty git repo --> git initialize --> .git folder -->hidden 
+After initializing the folder with git init --> all the changes from now are recorded.
+git status --> tells us these are the changes that are not there in the history of the project. --> (untracked files)
+git add . --> To maintain the chnages in the projects (adds all the chnages from the untracked files and makes the files ready to save in history).
+When we do git status --> then the we will get changes to be commited.
+to save chnages made on the folder, we can committhem using --> git commit -m "message to add for the chnages made" 
+git restore --staged <filename> --> removes from the stage(i.e, to commit the chnages we need to add it again using "git add ." )
+git add .
+git commit -m ""
+git log --> shows all the commits made.
+
+git reset <hashid of the commit> --> resets the commit -> removes all the commits above the given hashid.---> again the status of these will be unstaged (the removed commits will be out of the stage that must to be commited).
+
+If we dont want to commit the changes and we also dont want to unstage the chnages --> we just want to keep the stages somewhere and use it when we needed --> to keep them without commiting --> we use "git stash" --> after dng git stash --> and check the status---> we will be able to see there are no chnages to be commited and if we see the logs --> they will be remained same as before .
+
+git stash pop -->to get all the changes into staging area which are stored using git stash.
+
+git stash clear --> clears all the chnages from the back staging area(git stash) .
+
+to push something into github:
+------------------------------
+Conect with github repo:
+To attach the git repo with a project ( located locally in our system)
+git remote add origin URL(of github repo) --> (now our github repo is linked with our project which is located on our local system.
+remote  -- working with URL'S
+add -- adding URL'S
+Origin --> name of the URL
+
+git remote -v --> shows all the URL's that arec attached with the project.
+
+To push the files/folder into our git repo:
+git push origin master 
+push -- to push the changes that are made on the current project
+origin-- to which url you want to push.
+master -- to which branch.
+
+branching :
+------------ 
+all the commits made are formed in the form of branches.
+each commit is linked together in the form of a branch--> DAG
+this branch is called master.
+We dont commit on the main branch.
+HEAD-it is a pointer --> Always points to the main branch until the we switch to another branch.
+All the new commits maded will be added on the HEAD (on the branch which head points to)
+to create new branch --> git branch <branchname>
+to point the HEAD to require branch --> git checkout <branchname>
+
+Merge branching: 
+---------------
+merges other branches with the main branch such that other public will be able to see the chnages made in other branch(not the main branch)
+
+To merge our branch with main branch such that all the users can see the finalized things 
+git merge <brancname> --> (our branch will become the part of main branch)
+
+
+-------------------
+fork --> creates a duplicate project of others account(As we dont have access to make chnages for other acc) and add the project into your account.
+-------------------------
+git clone URL(clone url) --> to clone the project/github repo into our local system
+git remote origin URL --> to add folders/files from local sys to github repo
+------------------------
+git remote add upstream URL --> the URL from where the duplicate of the project is created. (from where the project was forked)
+------------------------
+Note:::: never commit on the main branch always --> create a new branch and commit on it.
+------------------------
+To merge the chnages made in our acc on the created branch to the main branch of the original project --> for thhis we use "pull request"
+we will merge such that the changes made in copy/duplicate project will refelct on main project main branch.
+----------------------------
+one branch can open only one pull request
+so once we merge the branche of our acc with origonal one and make chnages/commits--> everyu time we make chnages are added into the main project directly.
+So every timne we need to create new pull req and each branch can have one one pull request associated with it.
+------------------------------
+Note:::: anytime u make changes always create a new barcnh and work on it and make a pull req. (pull request is uesd to merge the chnages with the original project)
+-------------------------------
+git push origin kunal -f --> to make chnages in commits of the main project also.
+----------------------
+to get chnages done in the upstream to our acc "main" branch (original project main branch will be now similar to our acc main branch) 
+--git fetch --all --prune 
+--git checkout main
+--git reset --hard upstreanm/main
+---git pull upstream main
+------------------------
+SQUASH COMMITS: to merge commits.
+git rebase -i <hashid>
+change--> make it squash(merges to the previous pick commit)
+--------------------
+Merge conflicts: 
+to decide which chnage in line must be taken when there are chnages on the same line.
